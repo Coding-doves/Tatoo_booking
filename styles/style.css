@@ -638,15 +638,14 @@ header .banner #slide-container .slider.active a{
 .book-now > div .bk-section{
     width: 100%;
     padding-right: 30px;
-}
-.base-bg .booking-form .bk-section > div{
-    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
 }
-.base-bg .booking-form .bk-section > div{
-    flex: 1;
+.book-now > div .bk-section > div{
+    flex: 1 1 calc(50% - 1rem);
     margin-bottom: 1rem;
 }
 .book-now > div .bk-section button{
@@ -672,28 +671,43 @@ header .banner #slide-container .slider.active a{
     margin: 0 1rem 1rem 0;
     color: var(--white);
     outline: none;
+    width: 100%;
 }
 .book-now > div .bk-section input::placeholder{
     color: var(--white);
     font-size: 0.9rem;
     font-weight: 500;
 }
-.book-now > div .bk-section > div input{
-    width: 46%;
-}
-.book-now > div .bk-section textarea,
-.book-now > div .bk-section select{
-    width: 100%;
+
+.book-now > div .bk-section select option{
+    background-color: var(--white);
+    color: #c2a74e;
+    font-weight: 400;
 }
 @media (max-width:768px){
-    .book-now div{
-        width: 100%;
+    .book-now{
+        margin-top: 3rem;
+    }
+    .book-now > div{
+        width: 80%;
         padding: .2rem .5rem 2rem 1.5rem;
     }
-    .book-now > div .bk-section > div input{
-        width: 100%;
+    .base-bg .booking-form .bk-section{
+        flex-wrap: wrap;
     }
 }
+@media (max-width:480px){
+    .book-now{
+        padding-left: 1rem;
+    }
+    .book-now > div{
+        width: 100%;
+    }
+    .book-now > div h2{
+        font-size: 2rem;
+    }
+}
+
 .middle-content{
     margin-top: 7rem;
 }
@@ -704,7 +718,7 @@ header .banner #slide-container .slider.active a{
 }
 .middle-content .about .about-info,
 .middle-content .about .about-img{
-    width: 50%;
+    flex: 1;
 }
 
 .middle-content .about .about-info h2{
@@ -732,6 +746,17 @@ header .banner #slide-container .slider.active a{
 .middle-content .about .about-img img{
     width: 100%;
     height: 100%;
+}
+@media (max-width:768px){
+    .middle-content .about {
+        padding: 1rem 2rem;
+        gap: 1.5rem;
+    }
+}
+@media (max-width:500px){
+    .middle-content .about {
+        flex-direction: column;
+    }
 }
 
 .middle-content .opening-hours{
@@ -785,7 +810,6 @@ img{
 }
 .middle-content .opening-hours .info-hrs ul li:last-child{
     padding-left: 2.5rem;
-
 }
 .middle-content .opening-hours .info-hrs ul span{
     display: block;
@@ -793,9 +817,42 @@ img{
     text-transform: uppercase;
     font-size: 12px;
 }
-@media (max-width: 500px) {
+@media (max-width:768px){
     .middle-content .opening-hours{
-        display: none;
+        margin: 2rem 1rem -6rem 1rem;
+    }
+    .middle-content .opening-hours .info-hrs h2{
+        font-size: 1.5rem;
+        padding: .5rem 1rem .5rem 1rem;
+    }
+    .middle-content .opening-hours .info-hrs ul li{
+        font-size: 1.1rem;
+    }
+    .middle-content .opening-hours .info-hrs ul li:first-child,
+    .middle-content .opening-hours .info-hrs ul li:last-child{
+        padding: 1rem;
+    }
+}
+@media (max-width: 480px) {
+    .middle-content .opening-hours{
+        margin: 2rem 0 -6rem 0;
+        padding: 1rem 0.5rem;
+    }
+    .middle-content .opening-hours .info-hrs {
+        padding: 5px;
+        flex-direction: column;
+    }
+    .middle-content .opening-hours .info-hrs h2{
+        margin: 0;
+    }
+    .middle-content .opening-hours .info-hrs ul li{
+        font-size: 0.9rem;
+    }
+    .middle-content .opening-hours .info-hrs ul li:first-child{
+        padding: 0.5rem;
+    }
+    .middle-content .opening-hours .info-hrs ul li:last-child{
+        padding: 0.9rem;
     }
 }
 .middle-content #contact{
@@ -890,6 +947,11 @@ img{
     width: 100%;
     height: 100%;
     border: none;
+}
+@media (max-width: 768px) {
+    .middle-content #contact > div{
+        flex-direction: column-reverse;
+    }
 }
 footer{
     background-color: #141215;
