@@ -45,6 +45,7 @@ header .fixed-nav ul{
     align-items: center;
     list-style: none;
     gap: 2rem;
+    padding-left: 0;
 }
 header .fixed-nav ul li {
     padding: 0.3rem 0.5rem;
@@ -88,7 +89,7 @@ header .fixed-nav ul li a img{
         padding: 0.3rem 0.2rem;
     }
     header .fixed-nav ul li a{
-        font-size: 12px;
+        font-size: 13px;
         gap: 0.1rem;
     }
     
@@ -368,6 +369,9 @@ header .banner #slide-container .slider.active a{
 }
 
 @media (max-width: 768px){
+    header{
+        height: 96vh;
+    }
     header .banner{
         height: calc(96vh - 6rem);
     }
@@ -458,7 +462,7 @@ header .banner #slide-container .slider.active a{
 
 @media (max-width:768px){
     .base-bg {
-        margin-top: -4.5rem;
+        margin-top: 3rem;
     }
     .base-bg .booking-form{
         width: 100%;
