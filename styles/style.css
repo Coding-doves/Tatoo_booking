@@ -387,7 +387,7 @@ header .banner #slide-container .slider.active a{
         height: 30px;
     }
     header .banner button#prv{
-        top: 30%;
+        top: 32%;
     }
     header .banner #slide-container .slider  a{
         width: 60%;
@@ -458,7 +458,7 @@ header .banner #slide-container .slider.active a{
 
 @media (max-width:768px){
     .base-bg {
-        margin-top: -0.15rem;
+        margin-top: -4.5rem;
     }
     .base-bg .booking-form{
         width: 100%;
