@@ -34,7 +34,7 @@ header .fixed-nav{
     position: fixed;
     top: 0;
     left: 0;
-    height: 2.8rem;
+    height: 3rem;
     width: 100vw;
     background-color: #664d03;
     z-index: 999;
@@ -78,6 +78,11 @@ header .fixed-nav ul li a img{
 @media (max-width: 768px){
     header .fixed-nav ul{
         gap: 1rem;
+    }
+}
+@media (max-width: 500px){
+    header .fixed-nav ul{
+        gap: 0.2rem;
     }
 }
 
@@ -354,6 +359,12 @@ header .banner #slide-container .slider.active a{
 }
 
 @media (max-width: 768px){
+    header .banner{
+        height: calc(96vh - 6rem);
+    }
+    header .banner #slide-container .slider img{
+        height: calc(96vh - 6rem);
+    }
     header .banner #slide-container .slider i{
         font-size: 2rem;
     }
@@ -361,13 +372,13 @@ header .banner #slide-container .slider.active a{
         font-size: 4.5rem;
     }
     header .banner button{
-        top: 65%;
+        top: 40%;
     }
     header .banner button img{
         height: 30px;
     }
     header .banner button#prv{
-        top: 54.5%;
+        top: 30%;
     }
     header .banner #slide-container .slider  a{
         width: 60%;
