@@ -64,7 +64,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 - **Whatsapp**: [+234 814 0061166](https://wa.me/8140061166)
 - **Email**: legitinktattoo@gmail.com
-- **Address**: 123 Tattoo Street, Lagos, Nigeria
+- **Address**: Ocean Bay Estate, Orchid Road, Lekki Lagos
 - **Website**: [Ad Tech Nigeria](https://example.com) (Developer)
 
 For more information, visit our social media channels or contact us directly.
