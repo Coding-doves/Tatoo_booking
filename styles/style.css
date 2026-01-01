@@ -135,6 +135,15 @@ header nav button{
     display: none;
 }
 @media (max-width: 768px){
+    header nav{
+        height: 4.5rem;
+    }
+    header nav img{
+        height: 12rem;
+    }
+    header nav a.btn{
+        display: none;
+    }
     header nav button{
         display: block;
         padding: 0;
@@ -155,7 +164,7 @@ header nav button{
         backdrop-filter: blur(10px);
         width: 100%;
         position: absolute;
-        top: 6rem;
+        top: 7.5rem;
         left: 0;
         height: auto;
         padding: 10px 0 10px 0;
@@ -172,8 +181,8 @@ header nav button{
         padding: 20px;
     }
     header nav ul li:hover a{
-        font-weight: 900;
-        font-size: 1.4rem;
+        font-weight: 700;
+        font-size: 1.2rem;
     }
     header nav ul.clicked{
         display: block;
@@ -353,11 +362,23 @@ header .banner #slide-container .slider.active a{
     header .banner button{
         top: 65%;
     }
+    header .banner button img{
+        height: 30px;
+    }
     header .banner button#prv{
         top: 54.5%;
     }
     header .banner #slide-container .slider  a{
         width: 60%;
+    }
+}
+
+@media (max-width: 480px){
+    header .banner #slide-container .slider h1{
+        font-size: 3rem;
+    }
+    header .banner #slide-container .slider  a{
+        padding: 15px 10px;
     }
 }
 
@@ -414,8 +435,29 @@ header .banner #slide-container .slider.active a{
     border: none;
 }
 @media (max-width:768px){
-    .booking-form{
+    .base-bg {
+        margin-top: -0.15rem;
+    }
+    .base-bg .booking-form{
         width: 100%;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .base-bg .booking-form .bk-app div{
+        padding-right: 10px;
+    }
+    .base-bg .booking-form .bk-app div button,
+    .base-bg .booking-form .bk-app div select,
+    .base-bg .booking-form .bk-app div input{
+     padding-left: 8px;
+    }
+}
+@media (max-width: 480px){
+    .base-bg .booking-form .bk-app {
+        flex-wrap: wrap;
+    }
+    .base-bg .booking-form .bk-app div{
+        flex: 1 1 calc(50% - 1rem);
     }
 }
 
@@ -544,17 +586,20 @@ header .banner #slide-container .slider.active a{
     #services .service-wrap{
         flex-wrap: wrap; 
         gap: 1rem;
-
     }
     #services .service-wrap .service{
         flex: 1 1 calc(50% - 1rem);
+        margin-bottom: 1rem;
     }
 
     #services .service-wrap .service .img{
-        flex-direction: column;
+        width: 100%;
     }
 }
 @media (max-width:480px){
+    #services{
+        margin: 5rem 0 2rem 0;
+    }
     #services .service-wrap{
         flex-direction: column;
     }
