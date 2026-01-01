@@ -34,8 +34,8 @@ header .fixed-nav{
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    height: 3rem;
+    height: 2.8rem;
+    width: 100vw;
     background-color: #664d03;
     z-index: 999;
 }
@@ -74,6 +74,11 @@ header .fixed-nav ul li a img{
     height: 18px;
     -webkit-filter: invert();
     filter: invert();
+}
+@media (max-width: 768px){
+    header .fixed-nav ul{
+        gap: 1rem;
+    }
 }
 
 header nav{
@@ -417,7 +422,7 @@ header .banner #slide-container .slider.active a{
 #services{
     display: flex;
     flex-direction: column;
-    height: 30rem;
+    height: auto;
     padding: 2rem 5rem;
     margin: 4rem 0 8rem 0;
     justify-content: center;
@@ -532,11 +537,36 @@ header .banner #slide-container .slider.active a{
     filter: none;
 }
 @media (max-width:768px){
+    #services{
+        padding: .5rem 1.5rem;
+        margin: 2rem 0 2rem 0;
+    }
+    #services .service-wrap{
+        flex-wrap: wrap; 
+        gap: 1rem;
+
+    }
+    #services .service-wrap .service{
+        flex: 1 1 calc(50% - 1rem);
+    }
+
     #services .service-wrap .service .img{
         flex-direction: column;
     }
 }
-
+@media (max-width:480px){
+    #services .service-wrap{
+        flex-direction: column;
+    }
+    #services .service-wrap .service{
+        width: 90vw;
+        padding: .2rem;
+    }
+    #services .service-wrap .service .img{
+        width: 100%;
+        height: 100%;
+    }
+}
 .book-now{
     min-height: 95vh;
     background-image: url("/assets/images/tattoo\ removal\ cream\ that\ works.jpeg");

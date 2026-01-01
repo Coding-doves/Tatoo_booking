@@ -62,8 +62,8 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 
-- **Phone**: +234 800 000 0000
-- **Email**: info@legitink@gmail.com
+- **Whatsapp**: [+234 814 0061166](https://wa.me/8140061166)
+- **Email**: legitinktattoo@gmail.com
 - **Address**: 123 Tattoo Street, Lagos, Nigeria
 - **Website**: [Ad Tech Nigeria](https://example.com) (Developer)
 
