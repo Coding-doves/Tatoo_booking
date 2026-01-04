@@ -71,3 +71,10 @@ prvbtn.addEventListener("click", () => {
     previousSlide();
     resetTimer();
 });
+
+
+const formSubmit = document.getElementById('submit');
+
+formSubmit.addEventListener('click', () => {
+    alert("Booking via mail is currently not avaliable. Please book via whatsapp of or via web");
+})

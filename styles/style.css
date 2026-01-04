@@ -15,6 +15,18 @@
 /*apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 #664d03 #c2a74e
     */
+html{
+    scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 80px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body{
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
