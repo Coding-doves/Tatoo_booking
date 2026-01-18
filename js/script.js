@@ -71,3 +71,55 @@ prvbtn.addEventListener("click", () => {
     previousSlide();
     resetTimer();
 });
+
+
+// Fetch instagram feeds
+fetch("https://legit-ink-tattoo.onrender.com/api/v1/instafeed/")
+.then(response => {return response.json()})
+.then(
+    data => {
+        const container = document.getElementById("instafeed-container");
+
+        data.data.slice(0, 6).forEach(post => {
+
+            const instaPostLink = document.createElement("a");
+            instaPostLink.href = post.permalink;
+            instaPostLink.target = "_blank";
+            instaPostLink.rel = "noopener noreferrer";
+
+            if (post.media_type === "VIDEO") return;
+
+            const postWrapper = document.createElement("div");
+            postWrapper.classList.add("insta-post");
+
+            const instaPostImg = document.createElement("img");
+            instaPostImg.src = post.media_url;
+            instaPostImg.loading = "lazy";
+            instaPostImg.classList.add("insta-post-img");
+
+            const overlay = document.createElement("div");
+            overlay.classList.add("overlay");
+
+            const overlayLink = document.createElement("a");
+            overlayLink.href = post.permalink;
+            overlayLink.target = "_blank";
+            overlayLink.rel = "noopener noreferrer";
+            overlayLink.classList.add("overlayLink");
+
+            const instaIcon = document.createElement("img");
+            instaIcon.src = "../assets/icons/icons8-instagram-50.png";
+            instaIcon.alt = "Instagram Icon";
+            instaIcon.classList.add("insta-icon");
+
+            overlayLink.appendChild(instaIcon);
+            overlay.appendChild(overlayLink);
+
+            postWrapper.appendChild(instaPostImg);
+            postWrapper.appendChild(overlay);
+            instaPostLink.appendChild(postWrapper);
+
+            container.appendChild(instaPostLink);
+        });
+    }
+)
+.catch(err => console.error("Fetch error:", err));

@@ -653,6 +653,89 @@ header .banner #slide-container .slider.active a{
     }
 }
 
+/** Instagram feeds **/
+.instagram-feeds{
+    margin: 1.5rem 1rem 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.instagram-feeds h1{
+    text-align: center;
+}
+
+.instagram-feeds #instafeed-container{
+    display: grid; 
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.instagram-feeds #instafeed-container > a{
+    width: 100%;
+    height: 22rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.instagram-feeds #instafeed-container > a .insta-post {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.instagram-feeds #instafeed-container > a .insta-post .insta-post-img{ 
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.9;
+}
+.instagram-feeds #instafeed-container > a .insta-post .overlay{
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.instagram-feeds #instafeed-container > a:hover .insta-post .overlay{
+    opacity: 1;
+}
+.instagram-feeds #instafeed-container > a .insta-post .overlay .overlayLink{
+    text-decoration: none;
+    display: block;
+}
+.instagram-feeds #instafeed-container > a .insta-post .overlay .overlayLink .insta-icon{
+    height: 3rem;
+    width: 3rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.instagram-feeds #instafeed-container > a:hover .insta-post .overlay .overlayLink .insta-icon{
+    filter: invert();
+    transform: scale(1.1);
+}
+
+@media (max-width:768px){
+    .instagram-feeds{
+        margin: 1.5rem 0.5rem 3rem 0.5rem;
+    }
+    .instagram-feeds #instafeed-container{ 
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width:500px){
+    .instagram-feeds #instafeed-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
 /** Book now section **/
 .book-now{
     min-height: 95vh;
