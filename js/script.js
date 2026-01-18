@@ -81,21 +81,31 @@ fetch("https://legit-ink-tattoo.onrender.com/api/v1/instafeed/")
         const container = document.getElementById("instafeed-container");
 
         data.data.slice(0, 6).forEach(post => {
+            const postWrapper = document.createElement("div");
+            postWrapper.classList.add("insta-post");
 
             const instaPostLink = document.createElement("a");
             instaPostLink.href = post.permalink;
             instaPostLink.target = "_blank";
             instaPostLink.rel = "noopener noreferrer";
 
-            if (post.media_type === "VIDEO") return;
+            let instaMedia;
 
-            const postWrapper = document.createElement("div");
-            postWrapper.classList.add("insta-post");
+            if (post.media_type === "VIDEO") {
+                instaMedia = document.createElement("video");
+                instaMedia.src = post.media_url;
+                instaMedia.controls = false;
+                instaMedia.autoplay = true;
+                instaMedia.muted = true;
+                instaMedia.loop = true;
+                instaMedia.playsInline = true;
+            } else {
+                instaMedia = document.createElement("img");
+                instaMedia.src = post.media_url;
+                instaMedia.loading = "lazy";
+            }
 
-            const instaPostImg = document.createElement("img");
-            instaPostImg.src = post.media_url;
-            instaPostImg.loading = "lazy";
-            instaPostImg.classList.add("insta-post-img");
+            instaMedia.classList.add("insta-post-media");            
 
             const overlay = document.createElement("div");
             overlay.classList.add("overlay");
@@ -114,7 +124,7 @@ fetch("https://legit-ink-tattoo.onrender.com/api/v1/instafeed/")
             overlayLink.appendChild(instaIcon);
             overlay.appendChild(overlayLink);
 
-            postWrapper.appendChild(instaPostImg);
+            postWrapper.appendChild(instaMedia);
             postWrapper.appendChild(overlay);
             instaPostLink.appendChild(postWrapper);
 

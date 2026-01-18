@@ -505,13 +505,14 @@ header .banner #slide-container .slider.active a{
     flex-direction: column;
     height: auto;
     padding: 2rem 3rem;
-    margin: 2rem 0 8rem 0;
+    margin: 2rem 0 3rem 0;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
-#services h1{
+#services h1,
+.instagram-feeds h1{
     font-weight: 700;
     font-size: 3rem;
     color: #c2a74e;
@@ -655,13 +656,14 @@ header .banner #slide-container .slider.active a{
 
 /** Instagram feeds **/
 .instagram-feeds{
-    margin: 1.5rem 1rem 4rem 2rem;
+    margin: 1rem 1rem 4rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .instagram-feeds h1{
     text-align: center;
+    margin: 0 0 2.2rem 0;
 }
 
 .instagram-feeds #instafeed-container{
@@ -683,7 +685,7 @@ header .banner #slide-container .slider.active a{
     height: 100%;
 }
 
-.instagram-feeds #instafeed-container > a .insta-post .insta-post-img{ 
+.instagram-feeds #instafeed-container > a .insta-post .insta-post-media{ 
 	width: 100%;
     height: 100%;
     object-fit: cover;
