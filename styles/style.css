@@ -36,7 +36,9 @@ body{
     padding: 0;
     width: 100%;
 }
-
+button, a{
+    cursor: pointer;
+}
 /** header section **/
 header{
     height: 120vh;
@@ -427,6 +429,7 @@ header .banner #slide-container .slider.active a{
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 .base-bg .booking-form{
     width: 80%;
@@ -436,6 +439,7 @@ header .banner #slide-container .slider.active a{
     background-color: var(--highlight);
     color: #ffffff;
     padding: 30px;
+    z-index: 5;
 }
 .base-bg .booking-form .bk-app{
     display: flex;
@@ -457,8 +461,19 @@ header .banner #slide-container .slider.active a{
     background-color: transparent;
     padding-left: 15px;
 }
-.base-bg .booking-form .bk-app div select,
+.base-bg .booking-form .bk-app div input{
+    caret-color: #c2a74e;
+}
+.base-bg .booking-form .bk-app div input:focus{
+    color: #c2a74e;
+}
+.base-bg .booking-form .bk-app div select{
+    color: #c2a74e;
+    font-weight: 500;
+    font-size: .9rem;
+}
 .base-bg .booking-form .bk-app div input::placeholder,
+.base-bg .booking-form .bk-app div input,
 .base-bg .booking-form .bk-app div input[type='date']{
     color: #fffdd0;
     font-weight: 500;
@@ -471,7 +486,9 @@ header .banner #slide-container .slider.active a{
     font-size: 1.1rem;
     border: none;
 }
-
+.base-bg .booking-form .bk-app div button:hover{
+    background-color: #c4a235;
+}
 @media (max-width:768px){
     .base-bg {
         margin-top: 3rem;

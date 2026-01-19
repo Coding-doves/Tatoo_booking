@@ -57,7 +57,6 @@ function resetTimer() {
 const banner = document.querySelector(".banner");
 // Pause slide on hover
 banner.addEventListener("mouseenter", () => clearInterval(autoSlide));
-
 banner.addEventListener("mouseleave", () => resetTimer()
 );
 
@@ -133,3 +132,45 @@ fetch("https://legit-ink-tattoo.onrender.com/api/v1/instafeed/")
     }
 )
 .catch(err => console.error("Fetch error:", err));
+
+
+// Form submission
+bookingForm = document.querySelectorAll(".form_req")
+
+bookingForm.forEach((form) => {
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const formData = new FormData(form);
+
+        // Convert FormData to plain object
+        const payload = Object.fromEntries(formData.entries());
+
+        console.log("payload: ", payload);
+        try{
+            const response = await fetch(
+                "https://legit-ink-tattoo.onrender.com/api/v1/send-booking-mail/",
+                {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify(payload)
+                }
+            );
+
+            const data = await response.json();
+            console.log("Data: ", data, data.message, data.response);
+
+            if(!response.ok){
+                throw new Error(data.detail || "Booking failed");
+            }
+
+            alert("Booking submitted successfully");
+            form.reset();
+
+        } catch (err){
+            console.error("Booking error:", err);
+            alert("Something went wrong. Please try again.")
+        }
+    });
+});

@@ -109,24 +109,26 @@
     <div class="base-bg">
         <div class="booking-form">
             <h2>Book an Appointment</h2>
-            <form action="/submit-booking" method="POST" class="bk-app">
+            <form  class="bk-app form_req">
+                <input type="hidden" name="form-type" value="Booking Appointment">
                 <div>
                     <input type="text" id="name-banner" name="name" placeholder="Full Name" required>
 
                     <input type="email" id="email-banner" name="email" placeholder="Email Address" required>
                 </div>
                 <div>
-                    <input type="tel" id="phone-banner" name="phone" placeholder="Phone Number" required>
+                    <input type="tel" id="phone-banner" name="phone" placeholder="Phone Number (Optional)">
 
                     <input type="date" id="date-banner" name="date" title="Select appointment date" required>
                 </div>
 
                 <div>
                     <select id="service-banner" name="service" title="Select a service" required>
-                        <option value="Select Service">Custom Tattoo</option>
+                        <option value="Select Service">Select</option>
                         <option value="custom-tattoo">Custom Tattoo</option>
                         <option value="tattoo-removal">Tattoo Removal</option>
                         <option value="piercing">Piercing</option>
+                        <option value="henna">Henna</option>
                     </select>
 
                     <button type="submit">Book Now</button>
@@ -219,29 +221,31 @@
     	<div id="instafeed-container"></div>
     </section>
 
-    <section id="booking" class="book-now">
+    <section class="book-now">
         <div>
             <h2>Tattoo Appointment</h2>
-            <form action="/submit-booking" method="POST" class="bk-section">
+            <form class="bk-section form_req">
+                <input type="hidden" name="form-type" value="Booking Appointment">
                 <div>
                     <input type="text" id="name-book" name="name" placeholder="Full Name" required>
 
                     <input type="email" id="email-book" name="email" placeholder="Email Address" required>
                 </div>
                 <div>
-                    <input type="tel" id="phone-book" name="phone" placeholder="Phone Number" required>
+                    <input type="tel" id="phone-book" name="phone" placeholder="Phone Number (Optional)">
 
-                    <input type="date" id="date-book" name="date" title="Select appointment date" required>
+                    <input type="date" id="date-book" name="date" title="Select appointment date">
                 </div>
 
-                <select id="service-book" name="service" title="Select a service" required>
-                    <option value="Select Service">Custom Tattoo</option>
+                <select id="service-book" name="service" title="Select a service">
+                    <option value="Select Service">Select</option>
                     <option value="custom-tattoo">Custom Tattoo</option>
                     <option value="tattoo-removal">Tattoo Removal</option>
                     <option value="piercing">Piercing</option>
+                    <option value="henna">Henna</option>
                 </select>
 
-                <textarea name="content" id="" placeholder="Write a message" title="Enter Message" rows="5"></textarea>
+                <textarea name="content" id="" placeholder="Write a message" title="Enter Message" rows="5" required></textarea>
                     
                 <button id="submit" type="submit">Submit Booking</button>
             </form>
@@ -287,14 +291,16 @@
                     <span class="or">or</span>
                     <span class="mail-us">Leave us a mail</span>
                     
-                    <form action="post">
+                    <form class="form_req">
+                        <input type="hidden" name="form-type" value="Contacting Legit Ink">
+
                         <input type="text" id="name-contact" name="name" placeholder="Full Name" required>
 
                         <input type="email" id="email-contact" name="email" placeholder="Email Address" required>
 
-                        <input type="tel" id="phone-contact" name="phone" placeholder="Phone Number">
+                        <input type="tel" id="phone-contact" name="phone" placeholder="Phone Number (Optional)">
 
-                        <textarea name="content" id="" placeholder="Write a message" title="Enter Message" rows="5"></textarea>
+                        <textarea name="content" id="" placeholder="Write a message" title="Enter Message" rows="5" required></textarea>
                         
                         <button type="submit">Send</button>
                         
