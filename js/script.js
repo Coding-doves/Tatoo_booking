@@ -148,6 +148,7 @@ bookingForm.forEach((form) => {
         const payload = Object.fromEntries(formData.entries());
 
         try{
+            // Send contact / booking mail to Legit mail
             const response = await fetch(
                 "https://legit-ink-tattoo.onrender.com/api/v1/send-booking-mail/",
                 {
@@ -163,7 +164,23 @@ bookingForm.forEach((form) => {
                 throw new Error(data.detail || "Booking failed");
             }
 
-            alert("Booking submitted successfully");
+            // Send feedback mail to client
+            const feedback = await fetch(
+                "https://legit-ink-tattoo.onrender.com/api/v1/send-booking-mail/response-mail",
+                {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify(payload)
+                }
+            );
+
+            const feedbackData = await feedback.json();
+
+            if(!feedback.ok){
+                throw new Error(feedbackData.detail || "Feedback mail failed");
+            }
+
+            alert(`${payload.name}, your booking has been submitted successfully and a mail has been sent to your inbox.`);
             form.reset();
 
         } catch (err){
