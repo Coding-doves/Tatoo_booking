@@ -147,7 +147,6 @@ bookingForm.forEach((form) => {
         // Convert FormData to plain object
         const payload = Object.fromEntries(formData.entries());
 
-        console.log("payload: ", payload);
         try{
             const response = await fetch(
                 "https://legit-ink-tattoo.onrender.com/api/v1/send-booking-mail/",
@@ -159,7 +158,6 @@ bookingForm.forEach((form) => {
             );
 
             const data = await response.json();
-            console.log("Data: ", data, data.message, data.response);
 
             if(!response.ok){
                 throw new Error(data.detail || "Booking failed");

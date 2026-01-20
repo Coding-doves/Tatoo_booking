@@ -110,7 +110,8 @@
         <div class="booking-form">
             <h2>Book an Appointment</h2>
             <form  class="bk-app form_req">
-                <input type="hidden" name="form_type" value="Booking Appointment">
+                <input type="hidden" name="form_type"  value="Booking Appointment">
+
                 <div>
                     <input type="text" id="name-banner" name="name" placeholder="Full Name" required>
 
@@ -119,7 +120,7 @@
                 <div>
                     <input type="tel" id="phone-banner" name="phone" placeholder="Phone Number (Optional)">
 
-                    <input type="date" id="date-banner" name="date" title="Select appointment date" required>
+                    <input type="date" id="date-banner" name="booked_date" title="Select appointment date" required>
                 </div>
 
                 <div>
@@ -129,6 +130,7 @@
                         <option value="tattoo-removal">Tattoo Removal</option>
                         <option value="piercing">Piercing</option>
                         <option value="henna">Henna</option>
+                        <option value="others">Others</option>
                     </select>
 
                     <button type="submit">Book Now</button>
@@ -234,7 +236,7 @@
                 <div>
                     <input type="tel" id="phone-book" name="phone" placeholder="Phone Number (Optional)">
 
-                    <input type="date" id="date-book" name="date" title="Select appointment date">
+                    <input type="date" id="date-book" name="booked_date" title="Select appointment date">
                 </div>
 
                 <select id="service-book" name="service" title="Select a service">
@@ -243,6 +245,7 @@
                     <option value="tattoo-removal">Tattoo Removal</option>
                     <option value="piercing">Piercing</option>
                     <option value="henna">Henna</option>
+                    <option value="others">Others</option>
                 </select>
 
                 <textarea name="content" id="" placeholder="Write a message" title="Enter Message" rows="5" required></textarea>
